@@ -1,0 +1,1 @@
+This is the database for the article How Facebook mediated COVID-19 Risk Communication: Evidence from Chinese External Media During the Winter Olympics
