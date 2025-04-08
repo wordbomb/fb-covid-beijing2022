@@ -5,7 +5,7 @@ This is the database for the article:
 
 ## 📁 Dataset Files
 
-The repository contains three key files:
+The database folder contains three key files:
 
 ---
 
