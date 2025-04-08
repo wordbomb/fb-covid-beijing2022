@@ -87,7 +87,7 @@ This file contains **manual encodings** of the filtered posts, based on a framew
 
 Each variable is encoded using a **binary or categorical scheme** (0 = none, 1 = present, etc.), following the table below:
 
-![Encoding Table](.\encoding_scheme.png)
+![Encoding Table](encoding_scheme.png)
 
 ---
 
