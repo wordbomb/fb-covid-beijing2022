@@ -42,12 +42,13 @@ This file contains 15,931 Facebook posts published by **nine official Chinese ex
 
 #### 🔍 Data Collection Method
 
-- Posts were retrieved via the **CrowdTangle API**, a Facebook-approved tool for public content tracking.
-- API access was obtained through the official CrowdTangle request process, and all data usage complies with Facebook’s [terms of service](https://www.crowdtangle.com/terms/).
-- We addressed **API rate limits** using:
-  - Scheduled requests with exponential backoff
-  - Local caching to reduce duplicate requests
-  - Quota tracking to ensure daily compliance
+- Posts were retrieved using the **CrowdTangle API**, an official data tool provided by Facebook (Meta) for accessing public content from verified pages (which was unfortunately shut down on **August 14, 2024**).
+- API access was obtained through the official CrowdTangle application process, and all data collection strictly complied with Facebook’s [CrowdTangle Terms of Service](https://www.crowdtangle.com/terms/).
+- The official API documentation and sample code were available via the GitHub repository: [https://github.com/CrowdTangle/API](https://github.com/CrowdTangle/API)
+- To ensure stability and prevent triggering rate limits, we adopted the following collection strategy:
+  - Each API call requested **50 posts**, which is within the API’s per-request limit (maximum 100).
+  - Calls were made at a fixed interval of **one request per minute**, resulting in a collection rate of approximately **3,000 posts per hour**.
+  - The full dataset of **15,931 posts** was collected over the course of **about 5 hours**.
 
 ---
 
@@ -65,7 +66,8 @@ The filtering process includes:
 
 ### 3. `3_fc_encoding.xlsx`
 
-This file contains **manual encodings** of the filtered posts, based on a framework of factors influencing communication effectiveness. Each post is annotated across multiple dimensions, including:
+
+This file contains **manual encodings** of the filtered posts from `2_fb_content_filter.xlsx`, based on a framework of factors influencing communication effectiveness. Each post is annotated across multiple dimensions, including:
 
 #### ✅ **Information Presentation**
 - Describing Risk Scientifically
