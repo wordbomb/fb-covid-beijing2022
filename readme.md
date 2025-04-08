@@ -32,23 +32,23 @@ This file contains 15,931 Facebook posts published by **nine official Chinese ex
 
 - **CONTENT** column: The textual content of the post.
 
-- **LIKE** column: Number of likes as of **July 30, 2022**
+- **LIKE** column: Number of likes collected on **July 30, 2022**
 
-- **Share** column: Number of shares as of **July 30, 2022** 
+- **Share** column: Number of shares collected on **July 30, 2022** 
 
-- **Comment** column: Number of comments as of **July 30, 2022**
+- **Comment** column: Number of comments collected on **July 30, 2022**
 
 - **Time** column: The original **post publishing time** (in timestamp format)
 
 #### 🔍 Data Collection Method
 
 - Posts were retrieved using the **CrowdTangle API**, an official data tool provided by Facebook (Meta) for accessing public content from verified pages (which was unfortunately shut down on **August 14, 2024**).
-- API access was obtained through the official CrowdTangle application process, and all data collection strictly complied with Facebook’s [CrowdTangle Terms of Service](https://www.crowdtangle.com/terms/).
+- API access was obtained through the official CrowdTangle application process, and all data collection complied with Facebook’s [CrowdTangle Terms of Service](https://www.crowdtangle.com/terms/).
 - The official API documentation and sample code were available via the GitHub repository: [https://github.com/CrowdTangle/API](https://github.com/CrowdTangle/API)
-- To ensure stability and prevent triggering rate limits, we adopted the following collection strategy:
+- We adopted the following collection strategy:
   - Each API call requested **50 posts**, which is within the API’s per-request limit (maximum 100).
   - Calls were made at a fixed interval of **one request per minute**, resulting in a collection rate of approximately **3,000 posts per hour**.
-  - The full dataset of **15,931 posts** was collected over the course of **about 5 hours**.
+  - The full dataset of **15,931 posts** was collected **about 5 hours**.
 
 ---
 
@@ -57,7 +57,7 @@ This file contains 15,931 Facebook posts published by **nine official Chinese ex
 This file is a **filtered subset** of `1_fb_crawlers_all.csv`, including only relevant COVID-19–related posts.  
 The filtering process includes:
 
-- Posts must contain keywords such as **"COVID"**
+- Posts must contain keyword **"COVID"**
 - Posts **must not contain non-English characters**
 - The post must have been published between **January 28 and February 20, 2022** (one week before the 2022 Winter Olympics to the end date)
 - Each content item was **manually reviewed and cleaned** to ensure text completeness and accuracy
@@ -67,7 +67,7 @@ The filtering process includes:
 ### 3. `3_fc_encoding.xlsx`
 
 
-This file contains **manual encodings** of the filtered posts from `2_fb_content_filter.xlsx`, based on a framework of factors influencing communication effectiveness. Each post is annotated across multiple dimensions, including:
+This file contains **rule-based encodings** of the filtered posts from `2_fb_content_filter.xlsx`, based on a framework of factors influencing communication effectiveness. Each post is annotated across multiple dimensions, including:
 
 #### ✅ **Information Presentation**
 - Describing Risk Scientifically
@@ -87,7 +87,7 @@ This file contains **manual encodings** of the filtered posts from `2_fb_content
 #### ✅ **Social Media Effectiveness**
 - Engagement metrics (likes, comments, shares)
 
-Each variable is encoded using a **binary or categorical scheme** (0 = none, 1 = present, etc.), following the table below:
+Each variable is encoded using a **binary or categorical scheme**, following the table below:
 
 ![Encoding Table](encoding_scheme.png)
 
