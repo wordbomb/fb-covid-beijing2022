@@ -97,6 +97,9 @@ Each variable is encoded using a **binary or categorical scheme**, following the
 
 If you use this dataset, please cite:
 
-> *How Facebook mediated COVID-19 Risk Communication: Evidence from Chinese External Media During the Winter Olympics* (https://www.preprints.org/manuscript/202503.0046)
+
+> *Zhang, L.; Zhou, Y.; Shang, K.-k.
+How Facebook Mediated COVID-19 Risk Communication: Evidence from Chinese External Media During the Winter Olympics.
+Information 2025, 16(4), 306. https://doi.org/10.3390/info16040306
 
 ---
